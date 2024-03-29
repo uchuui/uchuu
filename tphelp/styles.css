@@ -11,8 +11,14 @@ body {
     color: white;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .big-text {
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
     padding: 10px 0;
 }
@@ -27,7 +33,7 @@ body {
 }
 
 .small-text {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     margin-top: 10px;
     position: relative;
@@ -40,18 +46,18 @@ body {
 }
 
 .third-text {
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     margin-top: 10px;
     background-color: #424242;
     border-radius: 0px;
-    padding: 5px 20px;
+    padding: 5px 10px;
 }
 
 .fourth-text {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -59,7 +65,7 @@ body {
 }
 
 .aa {
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -67,7 +73,7 @@ body {
 }
 
 .italic-text {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -76,7 +82,7 @@ body {
 }
 
 .iii {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -95,7 +101,7 @@ body {
 }
 
 .src-text, .userplugins-text {
-    font-size: 120%;
+    font-size: 100%;
     color: #0066ff;
 }
 
@@ -133,7 +139,42 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 100px; /* Adjust the size as needed */
+    width: 100px;
     height: auto;
-    z-index: 9999; /* Ensure it appears above other content */
+    z-index: 9999;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .big-text {
+        font-size: 20px;
+    }
+
+    .small-text {
+        font-size: 12px;
+    }
+
+    .third-text {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .fourth-text {
+        font-size: 16px;
+    }
+
+    .aa {
+        font-size: 20px;
+    }
+
+    .italic-text {
+        font-size: 12px;
+    }
+
+    .iii {
+        font-size: 12px;
+    }
 }
