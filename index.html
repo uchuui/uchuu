@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>bals</title>
+<title>noid</title>
 <style>
     body {
         background-color: #383838;
-        color: rgb(242, 242, 242);
+        color: white;
         font-family: Verdana, sans-serif;
         text-align: center;
         margin: 0;
@@ -30,6 +30,20 @@
     }
     .text {
         margin-top: 20px;
+    }
+
+    /* Media Query for phones */
+    @media screen and (max-width: 480px) {
+        .container {
+            width: 90%;
+            height: auto;
+        }
+        .container img {
+            width: 100%;
+        }
+        .text {
+            font-size: 16px;
+        }
     }
 </style>
 </head>
