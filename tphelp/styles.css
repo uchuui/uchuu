@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('Raleway-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    font-family: 'raleway';
+    color: white;
+}
+
+.big-text {
+    font-size: 36px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.divider {
+    width: 0;
+    height: 1px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px auto;
+    animation: extendDivider 1s forwards;
+}
+
+.small-text {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.group-text {
+    margin-top: 20px;
+}
+
+.third-text {
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    margin-top: 10px;
+    background-color: #424242;
+    border-radius: 0px;
+    padding: 5px 20px;
+}
+
+.fourth-text {
+    font-size: 25px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    margin-top: 10px;
+}
+
+.aa {
+    font-size: 30px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    margin-top: 10px;
+}
+
+.italic-text {
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.iii {
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    font-style: italic;
+    margin-top: 10px;
+    color: red;
+}
+
+.small-text a {
+    color: #ff94f1;
+    text-decoration: none;
+}
+
+.small-text a:hover {
+    text-decoration: underline;
+}
+
+.src-text, .userplugins-text {
+    font-size: 120%;
+    color: #0066ff;
+}
+
+.copy-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 70%;
+}
+
+.copy-button:hover {
+    background-color: #5a5a5a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes extendDivider {
+    to {
+        width: 30%;
+    }
+}
