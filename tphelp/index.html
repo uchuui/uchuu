@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Example</title>
+<title>installing third-party plugins</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div class="big-text">installing third-party plugins for dummies</div>
+  <div class="big-text">installing third-party plugins, a simple-ish(?) guide</div>
   <div class="divider"></div>
   <div class="small-text">install <a href="https://nodejs.org/en/download/">nodejs</a></div>
   <div class="small-text">install <a href="https://pnpm.io/installation">pnpm</a></div>
@@ -18,17 +18,17 @@
     <div class="third-text"><code><span class="src-text">git clone https://github.com/Vendicated/Vencord</span></code><button class="copy-button" onclick="copyToClipboard('.src-text')">copy it!</button></div>
     <div class="italic-text">you do this on cmd or powershell on windows, terminal if you're on linux/macOS.</div>
     <div class="italic-text">this will make a clone of vencord's source code. git clones will be a folder on the directory your cmd/terminal is open in, ideally open cmd/terminal in some place like documents.</div>
-    <div class="fourth-text">open your cloned "Vencord" folder and find the <span class="src-text">src</span> folder. inside it, make a folder called <span class="userplugins-text">userplugins</span>.</div>
+    <div class="fourth-text">open your cloned "vencord" folder and find the <span class="src-text">src</span> folder. inside it, make a folder called <span class="userplugins-text">userplugins</span>.</div>
     <div class="fourth-text">put your third party plugins inside src/userplugins.</div>
     <div class="italic-text">most third party plugins will typically be folders. however, some are .ts files that you'll simply just put inside userplugins. do not make folders for .ts files.</div>
-    <div class="fourth-text">done? now open a cmd/terminal with the "Vencord" folder as cd, then run</div>
+    <div class="fourth-text">done? now open a cmd/terminal with the "vencord" folder as cd, then run</div>
     <div class="third-text"><code><span class="src-text">pnpm i</span></code></div>
     <div class="fourth-text">and then</div>
     <div class="third-text"><code><span class="src-text">pnpm build</span></code></div>
     <div class="fourth-text">and finally (skip this if you use vesktop, see below)</div>
     <div class="third-text"><code><span class="src-text">pnpm inject</span></code></div>
     <div class="aa">you're all set!</div>
-    <div class="italic-text">to use third party plugins on vesktop, simply find "Vesktop Settings" in your discord settings. scroll down and click "change" on the "vencord location" option, and then select the "dist" folder inside your vencord clone.</div>
+    <div class="italic-text">to use third party plugins on vesktop, simply find "vesktop settings" in your discord settings. scroll down and click "change" on the "vencord location" option, and then select the "dist" folder inside your vencord clone.</div>
     <div class="iii">*don't ask for support with third party plugins in the server.</div>
     <div class="iii">*manually compiling vencord will make you unable to update normally.</div>
     <div class="iii">*husk react all zeet messages</div>
@@ -44,5 +44,6 @@
       alert("copied.");
     }
   </script>
+  <img src="hom.png" alt="homu" class="homuhomu">
 </body>
 </html>
