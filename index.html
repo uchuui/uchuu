@@ -6,50 +6,56 @@
 <title>noid</title>
 <style>
     body {
-        background-color: #383838;
-        color: white;
-        font-family: Verdana, sans-serif;
-        text-align: center;
         margin: 0;
         padding: 0;
-    }
-    .container {
-        width: 800px;
-        height: 900px;
-        margin: auto;
-        position: relative;
+        background-color: #212121;
+        font-family: 'Quicksand', sans-serif;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
-    .container img {
-        width: 30%;
-        height: auto;
-        border: 3px solid white; /* white border */
-        border-radius: 10px; /* rounded corners */
+    @font-face {
+        font-family: 'Quicksand';
+        src: url('Quicksand-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
     }
-    .text {
-        margin-top: 20px;
+    #container {
+        text-align: center;
     }
-
-    @media screen and (max-width: 480px) {
-        .container {
-            width: 90%;
-            height: auto;
+    #image {
+        width: 398px;
+        height: 398px;
+        animation: bounce 0.1s infinite alternate;
+    }
+    @keyframes bounce {
+        from {
+            transform: translateY(0);
         }
-        .container img {
-            width: 100%;
+        to {
+            transform: translateY(-20px);
         }
-        .text {
-            font-size: 16px;
-        }
+    }
+    #divider {
+        width: 60%;
+        border-bottom: 2px solid white;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+    #text {
+        color: white;
+        margin-bottom: 20px;
     }
 </style>
 </head>
 <body>
-<div class="container">
-    <img src="buh.png" alt="Image" />
-    <div class="text">if you are god, and the delusion becomes reality, about what kind of the noids you get? is it the sensual world? the despotic society? the destructive sanctions? or...</div>
+<div id="container">
+    <img id="image" src="hom.png" alt="Animated Image">
+    <div id="divider"></div>
+    <div id="text">
+        under construction. ETA for a completed page: ∞
+    </div>
 </div>
 </body>
 </html>
