@@ -95,10 +95,12 @@
     #toggle-button {
         width: 20px;
         height: 20px;
-        background-color: white;
+        background: linear-gradient(135deg, black 50%, #212121 50%);
         border: none;
         cursor: pointer;
-        margin-left: 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
         transition: background-color 0.3s;
     }
     @media (max-width: 768px) {
@@ -128,8 +130,8 @@
 </div>
 <div id="unix-time">
     live unix time: <span id="time"></span>
-    <button id="toggle-button"></button>
 </div>
+<button id="toggle-button"></button>
 
 <script>
     const cursor = document.getElementById('cursor');
@@ -162,8 +164,11 @@
     setInterval(updateUnixTime, 1000);
     updateUnixTime();
 
+    let isDarkMode = true;
+
     toggleButton.addEventListener('click', () => {
-        document.body.style.backgroundColor = document.body.style.backgroundColor === 'rgb(33, 33, 33)' ? '#000000' : '#212121';
+        document.body.style.backgroundColor = isDarkMode ? '#000000' : '#212121';
+        isDarkMode = !isDarkMode;
     });
 </script>
 
