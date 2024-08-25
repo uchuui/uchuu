@@ -14,12 +14,32 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        cursor: none;
     }
     @font-face {
         font-family: 'Quicksand';
         src: url('Quicksand-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
+    }
+    #cursor {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        pointer-events: none;
+        background: url('beachball.png') no-repeat center center;
+        background-size: contain;
+        animation: spin 500ms linear infinite;
+        z-index: 1000;
+        transition: width 0.2s, height 0.2s;
+    }
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
     #container {
         text-align: center;
@@ -28,6 +48,7 @@
         width: 398px;
         height: 398px;
         animation: bounce 0.1s infinite alternate;
+        transition: filter 0.2s;
     }
     @keyframes bounce {
         from {
@@ -50,12 +71,36 @@
 </style>
 </head>
 <body>
+<div id="cursor"></div>
 <div id="container">
-    <img id="image" src="hom.png" alt="Animated Image">
+    <img id="image" src="hom.png" alt="homhomhomhom">
     <div id="divider"></div>
     <div id="text">
         under construction. ETA for a completed page: ∞
     </div>
 </div>
+
+<script>
+    const cursor = document.getElementById('cursor');
+    const image = document.getElementById('image');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    });
+
+    image.addEventListener('mouseover', () => {
+        cursor.style.width = '28px';
+        cursor.style.height = '28px';
+        image.style.filter = 'drop-shadow(2px 2px 20px green) invert(75%)';
+    });
+
+    image.addEventListener('mouseout', () => {
+        cursor.style.width = '24px';
+        cursor.style.height = '24px';
+        image.style.filter = 'none';
+    });
+</script>
+
 </body>
 </html>
