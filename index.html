@@ -15,7 +15,8 @@
         align-items: center;
         height: 100vh;
         cursor: none;
-        overflow: hidden; /* Prevent scrollbars on mobile */
+        overflow: hidden;
+        position: relative;
     }
     @font-face {
         font-family: 'Quicksand';
@@ -44,6 +45,7 @@
     }
     #container {
         text-align: center;
+        position: relative;
     }
     #image {
         width: 398px;
@@ -69,10 +71,31 @@
         color: white;
         margin-bottom: 20px;
     }
-
+    #additional-text {
+        color: red;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.5s;
+    }
+    #image:hover ~ #additional-text {
+        opacity: 1;
+    }
+    #unix-time {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        font-size: 14px;
+    }
     @media (max-width: 768px) {
         #cursor {
             display: none;
+        }
+        #unix-time {
+            font-size: 12px;
         }
     }
 </style>
@@ -83,13 +106,18 @@
     <img id="image" src="hom.png" alt="homhomhomhom">
     <div id="divider"></div>
     <div id="text">
-        under construction. ETA for a completed page: ∞
+        currently in construction. ETA for a completed page: ∞
+    </div>
+    <div id="additional-text">
+        YOU ARE UNDER SURVEILLANCE. YOU ARE UNDER SURVEILLANCE. YOU ARE UNDER SURVEILLANCE. YPSDKH AR% UN55ER SU&&21??!
     </div>
 </div>
+<div id="unix-time"></div>
 
 <script>
     const cursor = document.getElementById('cursor');
     const image = document.getElementById('image');
+    const unixTimeElement = document.getElementById('unix-time');
 
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.pageX + 'px';
@@ -107,6 +135,14 @@
         cursor.style.height = '24px';
         image.style.filter = 'none';
     });
+
+    function updateUnixTime() {
+        const now = Math.floor(Date.now() / 1000);
+        unixTimeElement.textContent = `live unix time: ${now}`;
+    }
+
+    setInterval(updateUnixTime, 1000);
+    updateUnixTime();
 </script>
 
 </body>
