@@ -15,6 +15,7 @@
         align-items: center;
         height: 100vh;
         cursor: none;
+        overflow: hidden; /* Prevent scrollbars on mobile */
     }
     @font-face {
         font-family: 'Quicksand';
@@ -67,6 +68,12 @@
     #text {
         color: white;
         margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        #cursor {
+            display: none;
+        }
     }
 </style>
 </head>
