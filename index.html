@@ -89,8 +89,22 @@
         left: 10px;
         color: white;
         font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+    #toggle-button {
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: background-color 0.3s;
     }
     @media (max-width: 768px) {
+        body {
+            background-color: #000000;
+        }
         #cursor {
             display: none;
         }
@@ -112,12 +126,16 @@
         if you are god, and the delusion becomes reality, about what kind of the noids you get? is it the sensual world? the despotic society? the destructive sanctions? or...
     </div>
 </div>
-<div id="unix-time"></div>
+<div id="unix-time">
+    live unix time: <span id="time"></span>
+    <button id="toggle-button"></button>
+</div>
 
 <script>
     const cursor = document.getElementById('cursor');
     const image = document.getElementById('image');
-    const unixTimeElement = document.getElementById('unix-time');
+    const unixTimeElement = document.getElementById('time');
+    const toggleButton = document.getElementById('toggle-button');
 
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.pageX + 'px';
@@ -138,11 +156,15 @@
 
     function updateUnixTime() {
         const now = Math.floor(Date.now() / 1000);
-        unixTimeElement.textContent = `live unix time: ${now}`;
+        unixTimeElement.textContent = now;
     }
 
     setInterval(updateUnixTime, 1000);
     updateUnixTime();
+
+    toggleButton.addEventListener('click', () => {
+        document.body.style.backgroundColor = document.body.style.backgroundColor === 'rgb(33, 33, 33)' ? '#000000' : '#212121';
+    });
 </script>
 
 </body>
