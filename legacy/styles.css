@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: none;
+    position: relative;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('Quicksand-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#cursor {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    pointer-events: none;
+    background: url('beachball.png') no-repeat center center;
+    background-size: contain;
+    animation: spin 500ms linear infinite;
+    z-index: 1000;
+    transition: width 0.2s, height 0.2s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#container {
+    text-align: center;
+    position: relative;
+}
+
+#image {
+    width: 80vw;
+    max-width: 398px;
+    height: auto;
+    animation: bounce 0.1s infinite alternate;
+    transition: filter 0.2s;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+#divider {
+    width: 80%;
+    border-bottom: 2px solid white;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+#text {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#additional-text {
+    color: red;
+    opacity: 0;
+    position: relative;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s;
+}
+
+#image:hover ~ #additional-text {
+    opacity: 1;
+}
+
+#unix-time {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#toggle-button {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #000000 50%, #212121 50%);
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.3s;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: #000000;
+    }
+
+    #cursor {
+        display: none;
+    }
+
+    #image {
+        width: 90vw;
+        max-width: none;
+    }
+
+    #divider {
+        width: 90%;
+    }
+
+    #text {
+        font-size: 1rem;
+    }
+
+    #unix-time {
+        font-size: 0.8rem;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    #toggle-button {
+        width: 16px;
+        height: 16px;
+        top: 5px;
+        right: 5px;
+    }
+}
